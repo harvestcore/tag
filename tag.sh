@@ -15,9 +15,6 @@ then
   echo "Remote: $remote"
   echo "Repo: $repo"
 
-  export "$tag"
-
-  curl -s -X POST https://api.github.com/repos/harvestcore/"$repo"/git/refs \
-  -H "Authorization: token $GITHUB_KEY" \
-  -d { "ref": "refs/tags/$tag", "sha": "$commit" }
+  curl -XPOST -H 'Authorization: token '"$GITHUB_KEY" -H "Content-type: application/json" \
+  -d '{ "ref": "refs/heads/'"$tag"'", "sha": "'"$commit"'"}' 'https://api.github.com/repos/harvestcore/'"$repo"'/git/refs'
 fi
