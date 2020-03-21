@@ -21,8 +21,8 @@ then
   echo "Repo: $repo"
   echo "########################################################"
 
-  #curl -XPOST -H 'Authorization: token '"$GITHUB_KEY" -H "Content-type: application/json" \
-  #-d '{ "tag_name": "'"$vtag"'" }' 'https://api.github.com/repos/'"$GITHUB_USER"'/'"$repo"'/releases'
+  curl -XPOST -H 'Authorization: token '"$GITHUB_KEY" -H "Content-type: application/json" \
+  -d '{ "tag_name": "'"$vtag"'" }' 'https://api.github.com/repos/'"$GITHUB_USER"'/'"$repo"'/releases'
 
   echo "########################################################"
 fi
