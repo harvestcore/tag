@@ -20,7 +20,7 @@ then
   echo "########################################################"
 
   curl -XPOST -H 'Authorization: token '"$GITHUB_KEY" -H "Content-type: application/json" \
-  -d '{ "tag_name": "'"$tag"'" }' 'https://api.github.com/repos/harvestcore/'"$repo"'/releases'
+  -d '{ "tag_name": "'"$tag"'" }' 'https://api.github.com/repos/'"$GITHUB_USER"'/'"$repo"'/releases'
 
   echo "########################################################"
 fi
